@@ -16,6 +16,7 @@ h1{
     display: grid;
     grid-template-columns: repeat(16, calc(500px/16));
     border: 10px solid #97CBFF;
+    transition: 1s;
 }
 #grid-element{
     border: 1px solid black;
