@@ -24,3 +24,7 @@ h1{
     height: calc(500px/16 - 2);
     margin: 0;
 }
+#button-area{
+    margin: auto;
+    text-align: center;
+}

@@ -1,4 +1,5 @@
-for (let index = 0; index < (16*16); index++) {
+let gridSize = 16
+for (let index = 0; index < (gridSize*gridSize); index++) {
     document.getElementById('game').innerHTML += '<div id="grid-element"></div>'
     
 }
@@ -11,6 +12,10 @@ elementsArray.forEach(function(elem) {
         
     });
 });
-const sketch = () => {
 
+const reset = () => {
+    elementsArray.forEach(function(elem) {
+            elem.style.backgroundColor = 'white'
+            elem.style.border = '1px solid black;'
+    });
 }
