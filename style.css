@@ -28,6 +28,13 @@ h1{
     height: calc(500px/var(--grid-dimension) - 2);
     margin: 0;
 }
+.grid-element{
+    border: 1px solid black;
+    background-color: white;
+    width: calc(500px/var(--grid-dimension) - 2);
+    height: calc(500px/var(--grid-dimension) - 2);
+    margin: 0;
+}
 #button-area{
     margin: auto;
     text-align: center;

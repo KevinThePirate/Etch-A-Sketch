@@ -1,11 +1,11 @@
 let gridSize = 16 //Default Grid Size
 for (let index = 0; index < (gridSize*gridSize); index++) { 
     //Draw Initial 16*16 Grid (256 Squares)
-    document.getElementById('game').innerHTML += '<div id="grid-element"></div>'
+    document.getElementById('game').innerHTML += '<div class="grid-element"></div>'
     
 }
 
-let elementsArray = document.querySelectorAll("#grid-element"); //Get all of the #grid-elements
+let elementsArray = document.querySelectorAll(".grid-element"); //Get all of the .grid-elements
 elementsArray.forEach(function(elem) { //Add the event listener to change the block's style on hover
     elem.addEventListener("mouseover", function() {
         elem.style.backgroundColor = '#FFAD1E'
@@ -23,18 +23,26 @@ const reset = () => { //Wipe away the block and make them white again
 const redraw = () => { //Change the grid's size
     console.time('Whole Redraw');
     console.time('Start Section');
+
     gridSize = document.getElementById('myInput').value; //Get what is in the input field
+
     document.documentElement.style.cssText = `--grid-dimension: ${gridSize};`; //Change the css variable for the grid's size so that the CSS grid functions like it should
+
     document.getElementById('game').innerHTML = '' //First delete what's in the grid
+
     console.timeEnd('Start Section');
     console.time('For Loop');
-    for (let index = 0; index < (gridSize*gridSize); index++) { //Create the amount of <div> tags specified
-        document.getElementById('game').innerHTML += '<div id="grid-element"></div>'
-        
+
+    for(var i = 0; i < gridSize*gridSize; i += 1) {
+        var div = document.createElement("div");
+        div.className = "grid-element";
+        //div.innerHTML = text[i];
+        document.getElementById('game').appendChild(div);
     }
+
     console.timeEnd('For Loop')
     //Relink the new <div> tags so that they change colour
-    elementsArray = document.querySelectorAll("#grid-element");
+    elementsArray = document.querySelectorAll(".grid-element");
     elementsArray.forEach(function(elem) {
     elem.addEventListener("mouseover", function() {
         elem.style.backgroundColor = '#FFAD1E'
