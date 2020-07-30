@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 html{
     --grid-dimension: 16;
+    font-family: 'Roboto Mono', monospace;
 }
 body{
     background-color: #153D66;
 }
-h1{
+h1, span, label{
     color: #FFAD1E;
-    font-family: 'Roboto Mono', monospace;
     text-align: center;
+}
+input{
+    width: 50px;
+}
+#checkbox{
+    margin-left: -20px;
 }
 #game{
     width: 500px;
@@ -38,4 +44,10 @@ h1{
 #button-area{
     margin: auto;
     text-align: center;
+}
+button, input{
+    background-color: #153D66;
+    border: 2px solid #FFAD1E;
+    color: #FFAD1E;
+    font-size: 15px;
 }
