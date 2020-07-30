@@ -33,10 +33,9 @@ const redraw = () => { //Change the grid's size
     console.timeEnd('Start Section');
     console.time('For Loop');
 
-    for(var i = 0; i < gridSize*gridSize; i += 1) {
+    for(var i = 0; i < gridSize*gridSize; i++) {
         var div = document.createElement("div");
         div.className = "grid-element";
-        //div.innerHTML = text[i];
         document.getElementById('game').appendChild(div);
     }
 
