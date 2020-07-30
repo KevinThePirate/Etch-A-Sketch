@@ -21,13 +21,18 @@ const reset = () => { //Wipe away the block and make them white again
     });
 }
 const redraw = () => { //Change the grid's size
+    console.time('Whole Redraw');
+    console.time('Start Section');
     gridSize = document.getElementById('myInput').value; //Get what is in the input field
     document.documentElement.style.cssText = `--grid-dimension: ${gridSize};`; //Change the css variable for the grid's size so that the CSS grid functions like it should
     document.getElementById('game').innerHTML = '' //First delete what's in the grid
+    console.timeEnd('Start Section');
+    console.time('For Loop');
     for (let index = 0; index < (gridSize*gridSize); index++) { //Create the amount of <div> tags specified
         document.getElementById('game').innerHTML += '<div id="grid-element"></div>'
         
     }
+    console.timeEnd('For Loop')
     //Relink the new <div> tags so that they change colour
     elementsArray = document.querySelectorAll("#grid-element");
     elementsArray.forEach(function(elem) {
@@ -37,4 +42,5 @@ const redraw = () => { //Change the grid's size
         
     });
 });
+console.timeEnd('Whole Redraw');
 }
